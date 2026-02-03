@@ -1,14 +1,16 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 
 app = FastAPI()
 
 
 @app.post("/guvi-honeypot")
-async def guvi_honeypot_endpoint():
+async def guvi_honeypot_endpoint(request: Request):
     """
     Placeholder POST endpoint for guvi-honeypot.
+    Accepts any incoming data for honeypot monitoring.
     """
-    return {"message": "GUVI Honeypot endpoint"}
+    # In a real implementation, you would log/process the incoming data
+    return {"message": "GUVI Honeypot endpoint", "status": "received"}
 
 
 @app.get("/")

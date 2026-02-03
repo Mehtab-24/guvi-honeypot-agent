@@ -10,7 +10,7 @@ A FastAPI-based honeypot agent for GUVI.
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.8+
 
 ## Installation
 
