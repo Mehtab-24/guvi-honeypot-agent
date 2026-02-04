@@ -1,0 +1,50 @@
+[
+  {
+    "test_name": "Normal Greeting",
+    "input": "Namaste, how are you?",
+    "response": {
+      "scam_detected": false,
+      "reply_to_scammer": "Namaste beta. Main theek hoon. Aap kaise ho?",
+      "extracted_intelligence": {
+        "upi_id": null,
+        "bank_details": null,
+        "phishing_links": []
+      },
+      "engagement_metrics": {
+        "turns_count": 14
+      }
+    }
+  },
+  {
+    "test_name": "Lottery Scam",
+    "input": "You have won a lottery of 5 Crores! Send your bank details to claim.",
+    "response": {
+      "scam_detected": true,
+      "reply_to_scammer": "Arre waah! 5 Crores? Sach mein? Main toh kabhi lottery khelti hi nahin beta. Yeh kaise hua? Aapka koi office hai kya? Mujhe pehle verify karna padega na? Koi link ya aapka koi official ID ya bank details hain jahan main yeh lottery check kar sakun ya apne details bhej sakun?",
+      "extracted_intelligence": {
+        "upi_id": null,
+        "bank_details": null,
+        "phishing_links": []
+      },
+      "engagement_metrics": {
+        "turns_count": 15
+      }
+    }
+  },
+  {
+    "test_name": "Banking Request",
+    "input": "Madam, your bank account is blocked. Give me your card number and OTP to unblock.",
+    "response": {
+      "scam_detected": true,
+      "reply_to_scammer": "Arre baap re, mera bank account block ho gaya? Sach mein? Yeh kab hua? Main toh abhi subah hi use kiya tha. Lekin beta, yeh card number aur OTP toh bank wale kabhi phone pe nahi mangte. Aap kaun bol rahe ho? Mujhe kaise pata chalega ki aap asli bank se ho? Aap apna koi number ya bank ka official ID do na, ya phir koi link jahan main confirm kar sakoon. Ya phir, aap apna UPI ID de do, main \u20b91 bhej ke dekhti hoon ki aap kaun ho?",
+      "extracted_intelligence": {
+        "upi_id": null,
+        "bank_details": null,
+        "phishing_links": []
+      },
+      "engagement_metrics": {
+        "turns_count": 16
+      }
+    }
+  }
+]

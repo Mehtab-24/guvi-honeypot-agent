@@ -18,3 +18,15 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+
+# Secrets
+.env
+
+# Environments
+.venv venv/ env/
+
+# Python
+pycache/ *.py[cod]
+
+# IDEs
+.agent/ .vscode/ .antigravity/

@@ -1,0 +1,50 @@
+[
+  {
+    "test_name": "Normal Greeting",
+    "input": "Namaste, how are you?",
+    "response": {
+      "scam_detected": false,
+      "reply_to_scammer": "Namaste beta. Main theek hoon, aap kaise hain? Sab changa?",
+      "extracted_intelligence": {
+        "upi_id": null,
+        "bank_details": null,
+        "phishing_links": []
+      },
+      "engagement_metrics": {
+        "turns_count": 17
+      }
+    }
+  },
+  {
+    "test_name": "Lottery Scam",
+    "input": "You have won a lottery of 5 Crores! Send your bank details to claim.",
+    "response": {
+      "scam_detected": true,
+      "reply_to_scammer": "Arre baap re, 5 crore? Sach mein? Main toh koi lottery kheli hi nahi kabhi. Yeh kaise ho gaya? Aur bank details kaise denge? Aap apni details do na, ya koi link, jahan main yeh lottery check kar sakoon? Koi UPI ID hai aapki? Main thodi confusion mein hoon, samjha do zara.",
+      "extracted_intelligence": {
+        "upi_id": null,
+        "bank_details": null,
+        "phishing_links": []
+      },
+      "engagement_metrics": {
+        "turns_count": 18
+      }
+    }
+  },
+  {
+    "test_name": "Banking Request",
+    "input": "Madam, your bank account is blocked. Give me your card number and OTP to unblock.",
+    "response": {
+      "scam_detected": true,
+      "reply_to_scammer": "Aiyoo, mera bank account blocked? Sach mein? Par beta, kaunse bank ka? Mujhe toh koi message nahi aaya. Aur card number aur OTP toh kisi ko nahi dete na? Mummy ne bola tha. Aapko kaise pata? Aap mujhe pehle apni ID batao, ya koi link do jahan main check kar sakoon. Ya batao aap kaise help karoge, main aapko paise bhej doon, agar kuch payment karna hai toh?",
+      "extracted_intelligence": {
+        "upi_id": null,
+        "bank_details": null,
+        "phishing_links": []
+      },
+      "engagement_metrics": {
+        "turns_count": 19
+      }
+    }
+  }
+]
