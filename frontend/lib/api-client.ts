@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8002'; // Pointing to our Fast API
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8002'; // Configurable for Production
 
 export interface Interaction {
     timestamp: string;

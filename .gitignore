@@ -1,32 +1,19 @@
-# Byte-compiled / optimized / DLL files
+# Backend (Root)
+.env
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Virtual environment
+.venv/
 venv/
-env/
-ENV/
+results.json
+threat_intel.db
+.agent/
+.antigravity/
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
+# Frontend (Subfolder)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.env*.local
 .DS_Store
-Thumbs.db
-
-# Secrets
-.env
-
-# Environments
-.venv venv/ env/
-
-# Python
-pycache/ *.py[cod]
-
-# IDEs
-.agent/ .vscode/ .antigravity/
