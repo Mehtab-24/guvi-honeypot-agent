@@ -1,4 +1,4 @@
-# Backend (Root)
+# Backend / Root
 .env
 __pycache__/
 *.py[cod]
@@ -9,11 +9,12 @@ results.json
 threat_intel.db
 .agent/
 .antigravity/
+.DS_Store
+node_modules/
 
-# Frontend (Subfolder)
+# Explicit Frontend Ignores (Double Safety)
 frontend/node_modules/
 frontend/.next/
 frontend/out/
 frontend/build/
 frontend/.env*.local
-.DS_Store
