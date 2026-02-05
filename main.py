@@ -2,6 +2,8 @@ import os
 import typing
 from collections import defaultdict
 from fastapi import FastAPI, Request, HTTPException
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
 import google.generativeai as genai
@@ -32,6 +34,17 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# --- 422 Debug Handler (From Research) ---
+@app.exception_handler(RequestValidationError)
+async def debug_validation_handler(request: Request, exc: RequestValidationError):
+    # This logs the raw body causing the 422 error to the console
+    body = await request.body()
+    print(f"DEBUG: Tester sent invalid body: {body.decode()}")
+    return JSONResponse(
+        status_code=422,
+        content={"detail": exc.errors(), "raw_body": body.decode()}
+    )
 
 # In-memory dictionary to track turn counts
 # Key: client_ip (or some identifier), Value: int (count)

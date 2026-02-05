@@ -5,10 +5,10 @@ from typing import Dict, List, Optional
 from openai import OpenAI
 
 # --- Agent Configuration ---
-# OpenRouter Model ID
-ORCHESTRATOR_MODEL = "deepseek/deepseek-r1" 
-PERSONA_MODEL = "deepseek/deepseek-r1"
-EXTRACTION_MODEL = "deepseek/deepseek-r1"
+# OpenRouter Model ID (Stable for Production)
+ORCHESTRATOR_MODEL = "google/gemini-2.0-flash-thinking-exp-1219" 
+PERSONA_MODEL = "google/gemini-2.0-flash-thinking-exp-1219"
+EXTRACTION_MODEL = "google/gemini-2.0-flash-thinking-exp-1219"
 
 class BaseAgent:
     def __init__(self, api_key: str, model_name: str):
