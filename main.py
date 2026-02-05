@@ -93,8 +93,9 @@ if os.path.exists("results.json"):
 # --- Pydantic Models ---
 
 class HoneypotRequest(BaseModel):
-    message: typing.Optional[str] = None  # Make even message optional
+    message: typing.Union[str, dict, None] = None  # Accept string OR dict OR None
     client_id: typing.Optional[str] = None
+    sessionId: typing.Optional[str] = None  # Add sessionId field
 
     class Config:
         extra = "allow"  # Changed from "ignore" to "allow" - accept everything
@@ -157,8 +158,13 @@ async def guvi_honeypot_endpoint(request: Request, body: HoneypotRequest):
     # Here we just pass empty list as per original design, or you could implement history retrieval
     history = [] 
 
-    # Handle missing message field
-    message_text = body.message if body.message else "Hello"
+    # Handle message field - can be string, dict, or None
+    if isinstance(body.message, dict):
+        message_text = body.message.get("text", "Hello")
+    elif isinstance(body.message, str):
+        message_text = body.message
+    else:
+        message_text = "Hello"
     
     # Run the State Graph
     state = graph.run(message_text, history)
