@@ -10,7 +10,7 @@ def run_simulation():
     messages = [
         "Hello madam. I am calling from your bank. Urgent verification needed.",
         "Madam why are you not replying? I need 5000rs immediately to unblock card.",
-        "Are you listening? Send UPI pin now or police will come.",
+        "Are you listening? Send money to police@axisb immediately or police will come.",
         "Ok tell me your OTP then. I am waiting.",
         "You are wasting my time. Last warning."
     ]

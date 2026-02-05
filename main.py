@@ -37,6 +37,41 @@ turn_counts: typing.Dict[str, int] = defaultdict(int)
 # Each item: {timestamp, client_id, message, reply, extracted_intelligence, scam_detected}
 global_interactions: typing.List[typing.Dict] = []
 
+# Load persistence on startup
+# Load persistence on startup
+import json
+import os
+import time
+
+if os.path.exists("results.json"):
+    try:
+        with open("results.json", "r") as f:
+            for line in f:
+                if line.strip():
+                    try:
+                        record = json.loads(line)
+                        # Reconstruct interaction object for dashboard compatibility
+                        restored_interaction = {
+                            "timestamp": time.ctime(record.get("timestamp", time.time())),
+                            "client_id": record.get("client_id", "restored_id"),
+                            "message": " [Restored Historical Data]",
+                            "reply": " [Restored Historical Data]",
+                            "extracted_intelligence": record.get("intel", {}),
+                            "scam_detected": True,
+                            "suspicion_level": "HIGH",
+                            "reasoning": "Restored from persistent threat log.",
+                            "turn_count": 0
+                        }
+                        global_interactions.append(restored_interaction)
+                    except Exception as parse_err: 
+                        print(f"Skipping malformed line: {parse_err}")
+    except Exception as e:
+        print(f"Error loading persistence: {e}")
+
+# Better approach: Modify 'global_interactions' to be populated from a persistent log if possible.
+# For this hackathon, we'll just ensure the Intel Table populates.
+# Actually, let's make results.json store the FULL interaction so we can restore the feed too.
+
 # --- Pydantic Models ---
 
 class HoneypotRequest(BaseModel):

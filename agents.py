@@ -6,9 +6,9 @@ from openai import OpenAI
 
 # --- Agent Configuration ---
 # OpenRouter Model ID
-ORCHESTRATOR_MODEL = "google/gemini-2.0-flash-lite:free" 
-PERSONA_MODEL = "google/gemini-2.0-flash-lite:free"
-EXTRACTION_MODEL = "google/gemini-2.0-flash-lite:free"
+ORCHESTRATOR_MODEL = "google/gemini-2.0-flash-001" 
+PERSONA_MODEL = "google/gemini-2.0-flash-001"
+EXTRACTION_MODEL = "google/gemini-2.0-flash-001"
 
 class BaseAgent:
     def __init__(self, api_key: str, model_name: str):
