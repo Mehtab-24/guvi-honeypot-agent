@@ -93,11 +93,11 @@ if os.path.exists("results.json"):
 # --- Pydantic Models ---
 
 class HoneypotRequest(BaseModel):
-    message: str
+    message: typing.Optional[str] = None  # Make even message optional
     client_id: typing.Optional[str] = None
 
     class Config:
-        extra = "ignore"
+        extra = "allow"  # Changed from "ignore" to "allow" - accept everything
 
 class ExtractedIntelligence(BaseModel):
     upi_id: typing.Optional[str] = Field(None, description="Extracted UPI ID or null")
@@ -157,8 +157,11 @@ async def guvi_honeypot_endpoint(request: Request, body: HoneypotRequest):
     # Here we just pass empty list as per original design, or you could implement history retrieval
     history = [] 
 
+    # Handle missing message field
+    message_text = body.message if body.message else "Hello"
+    
     # Run the State Graph
-    state = graph.run(body.message, history)
+    state = graph.run(message_text, history)
     
     # Store interaction in global history
     import datetime
