@@ -115,6 +115,22 @@ async def guvi_honeypot_endpoint(request: Request, body: HoneypotRequest):
         "turns_count": current_turn_count
     })
 
+    # --- Threat Intel Persistence ---
+    # Store extraction results to a JSON file
+    # Using state.extracted_intel as 'data' and tracker_key as 'client_id'
+    if state.extracted_intel.get("upi_id") or state.extracted_intel.get("bank_details") or state.extracted_intel.get("phishing_links"):
+        import time
+        record = {
+            "timestamp": time.time(),
+            "client_id": tracker_key,
+            "intel": state.extracted_intel
+        }
+        try:
+            with open("results.json", "a") as f:
+                f.write(json.dumps(record) + "\n")
+        except Exception as e:
+            print(f"Error saving to results.json: {e}")
+
     # Construct the final response
     return HoneypotResponse(
         scam_detected=state.scam_detected,
@@ -167,7 +183,7 @@ async def report_scam():
     """
     import asyncio
     await asyncio.sleep(1) # Simulate API latency
-    return {"status": "success", "message": "Report forwarded to NPCI Cyber Crime Portal. Reference ID: NPCI-2026-X99"}
+    return {"status": "success", "message": "Success: Reported to National Cyber Crime Cell"}
 
 @app.get("/")
 async def root():

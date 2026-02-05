@@ -14,24 +14,24 @@ export default function SOCDashboard() {
   const [intelData, setIntelData] = useState<IntelItem[]>([]);
   const [isReporting, setIsReporting] = useState(false);
 
-  // Poll for Dashboard Log every 2s
+  // Poll for Dashboard Log every 3s
   useEffect(() => {
     const interval = setInterval(async () => {
       const data = await fetchDashboardData();
       if (data.interactions) setInteractions(data.interactions);
       if (data.turn_counts) setCounts(data.turn_counts);
-    }, 2000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
-  // Poll for Intel Table every 5s
+  // Poll for Intel Table every 3s
   useEffect(() => {
     const fetchTable = async () => {
       const data = await fetchIntel();
       setIntelData(data);
     };
     fetchTable(); // Initial load
-    const interval = setInterval(fetchTable, 5000);
+    const interval = setInterval(fetchTable, 3000);
     return () => clearInterval(interval);
   }, []);
 
