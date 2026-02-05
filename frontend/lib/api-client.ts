@@ -5,7 +5,7 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8002';
 export interface Interaction {
     timestamp: string;
     client_id: string;
-    message: string;
+    message: string | { sender?: string; text?: string } | any;
     reply: string;
     extracted_intelligence: {
         upi_id: string | null;

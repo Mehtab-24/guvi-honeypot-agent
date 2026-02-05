@@ -8,6 +8,13 @@ import { Button } from "@/components/ui/button";
 import clsx from 'clsx';
 import { ShieldCheck, Activity, Database, Lock, Globe } from "lucide-react";
 
+// Helper to safely extract text from message (handles string or object)
+const getMessageText = (message: any): string => {
+  if (typeof message === 'string') return message;
+  if (typeof message === 'object' && message?.text) return message.text;
+  return JSON.stringify(message || '');
+};
+
 export default function SOCDashboard() {
   const [interactions, setInteractions] = useState<any[]>([]);
   const [counts, setCounts] = useState<any>({});
@@ -156,7 +163,7 @@ export default function SOCDashboard() {
 
                       {/* Message Exchange */}
                       <div className="grid grid-cols-1 gap-2 text-sm">
-                        <div className="text-red-300"><span className="font-bold opacity-70">TARGET:</span> "{interaction.message}"</div>
+                        <div className="text-red-300"><span className="font-bold opacity-70">TARGET:</span> "{getMessageText(interaction.message)}"</div>
                         <div className="text-green-300"><span className="font-bold opacity-70">MRS. SHARMA:</span> "{interaction.reply}"</div>
                       </div>
                     </CardContent>
