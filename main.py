@@ -83,6 +83,9 @@ class HoneypotRequest(BaseModel):
     message: str
     client_id: typing.Optional[str] = None
 
+    class Config:
+        extra = "ignore"
+
 class ExtractedIntelligence(BaseModel):
     upi_id: typing.Optional[str] = Field(None, description="Extracted UPI ID or null")
     bank_details: typing.Optional[str] = Field(None, description="Extracted bank account details or null")
