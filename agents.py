@@ -6,9 +6,9 @@ from openai import OpenAI
 
 # --- Agent Configuration ---
 # OpenRouter Model ID
-ORCHESTRATOR_MODEL = "google/gemini-2.0-flash-001" 
-PERSONA_MODEL = "google/gemini-2.0-flash-001"
-EXTRACTION_MODEL = "google/gemini-2.0-flash-001"
+ORCHESTRATOR_MODEL = "deepseek/deepseek-r1" 
+PERSONA_MODEL = "deepseek/deepseek-r1"
+EXTRACTION_MODEL = "deepseek/deepseek-r1"
 
 class BaseAgent:
     def __init__(self, api_key: str, model_name: str):

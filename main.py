@@ -15,6 +15,11 @@ API_KEY = os.getenv("OPENROUTER_API_KEY")
 if not API_KEY:
     raise RuntimeError("OPENROUTER_API_KEY is not set in .env file")
 
+# Backend API Security
+BACKEND_SECRET = os.getenv("X_API_KEY")
+if not BACKEND_SECRET:
+    print("WARNING: X_API_KEY not found in .env. API is unsecured!")
+
 # genai.configure(api_key=API_KEY) # No longer needed for OpenRouter via OpenAI client
 
 app = FastAPI()
@@ -119,6 +124,12 @@ async def guvi_honeypot_endpoint(request: Request, body: HoneypotRequest):
     """
     Honeypot endpoint to analyze potential scam messages.
     """
+    # Security Check
+    if BACKEND_SECRET:
+        req_token = request.headers.get("x-api-key")
+        if req_token != BACKEND_SECRET:
+            raise HTTPException(status_code=401, detail="Unauthorized: Invalid x-api-key header")
+
     # Track turns based on client_id (if provided) or client IP
     tracker_key = body.client_id if body.client_id else (request.client.host if request.client else "unknown")
     
