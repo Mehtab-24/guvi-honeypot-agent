@@ -1,0 +1,231 @@
+[
+    {
+        "timestamp": "2026-02-04T14:32:59.656541",
+        "message": "Urgent! Your KYC is blocked. Click https://fake-kyc.in",
+        "scam_type": "KYC Phishing",
+        "risk_score": 85,
+        "entities": {
+            "phone_numbers": [],
+            "urls": [
+                "https://fake-kyc.in"
+            ],
+            "keywords": [
+                "urgent",
+                "blocked",
+                "kyc",
+                "click"
+            ]
+        }
+    },
+    {
+        "timestamp": "2026-02-04T14:33:11.535438",
+        "message": "Urgent! Your KYC is blocked. Click https://fake-kyc.in",
+        "scam_type": "KYC Phishing",
+        "risk_score": 85,
+        "entities": {
+            "phone_numbers": [],
+            "urls": [
+                "https://fake-kyc.in"
+            ],
+            "keywords": [
+                "urgent",
+                "blocked",
+                "kyc",
+                "click"
+            ]
+        }
+    },
+    {
+        "timestamp": "2026-02-04T14:33:38.545957",
+        "message": "Urgent! Your KYC is blocked. Click https://fake-kyc.in",
+        "scam_type": "KYC Phishing",
+        "risk_score": 85,
+        "entities": {
+            "phone_numbers": [],
+            "urls": [
+                "https://fake-kyc.in"
+            ],
+            "keywords": [
+                "urgent",
+                "blocked",
+                "kyc",
+                "click"
+            ]
+        }
+    },
+    {
+        "timestamp": "2026-02-04T14:44:31.520787",
+        "message": "Congratulations! You won a lottery prize. Click now.",
+        "scam_type": "Lottery Scam",
+        "risk_score": 35,
+        "entities": {
+            "phone_numbers": [],
+            "urls": [],
+            "keywords": [
+                "lottery",
+                "prize",
+                "click"
+            ]
+        }
+    },
+    {
+        "timestamp": "2026-02-04T14:48:41.710524",
+        "message": "Urgent! Your SBI account is blocked. Email us at support@fakebank.com or pay to scammer@upi. Click https://fake-kyc.in",
+        "scam_type": "KYC Phishing",
+        "risk_score": 90,
+        "entities": {
+            "phone_numbers": [],
+            "urls": [
+                "https://fake-kyc.in"
+            ],
+            "emails": [
+                "support@fakebank.com"
+            ],
+            "upi_ids": [
+                "support@fakebank",
+                "scammer@upi"
+            ],
+            "banks": [
+                "sbi"
+            ],
+            "keywords": [
+                "urgent",
+                "blocked",
+                "kyc",
+                "account",
+                "click"
+            ]
+        }
+    },
+    {
+        "timestamp": "2026-02-04T15:19:40.693361",
+        "message": "Urgent! Your SBI account is blocked. Update your KYC now: https://fake-kyc.in \nContact support@fakebank.com or pay to scammer@upi\n",
+        "scam_type": "KYC Phishing",
+        "risk_score": 85,
+        "entities": {
+            "phone_numbers": [],
+            "urls": [
+                "https://fake-kyc.in"
+            ],
+            "emails": [
+                "support@fakebank.com"
+            ],
+            "upi_ids": [
+                "support@fakebank",
+                "scammer@upi"
+            ],
+            "banks": [
+                "sbi"
+            ],
+            "keywords": [
+                "urgent",
+                "blocked",
+                "kyc",
+                "account"
+            ]
+        }
+    },
+    {
+        "timestamp": "2026-02-04T16:10:25.705819",
+        "message": "Urgent! Your SBI account is blocked. Update your KYC now: https://fake-kyc.in \nContact support@fakebank.com or pay to scammer@upi\n",
+        "scam_type": "KYC Phishing",
+        "risk_score": 85,
+        "entities": {
+            "phone_numbers": [],
+            "urls": [
+                "https://fake-kyc.in"
+            ],
+            "emails": [
+                "support@fakebank.com"
+            ],
+            "upi_ids": [
+                "support@fakebank",
+                "scammer@upi"
+            ],
+            "banks": [
+                "sbi"
+            ],
+            "keywords": [
+                "urgent",
+                "blocked",
+                "kyc",
+                "account"
+            ]
+        }
+    },
+    {
+        "timestamp": "2026-02-05T00:37:16.554745",
+        "message": "Urgent! Your SBI account has been temporarily blocked due to KYC issues. \nVerify immediately at https://secure-kyc-update.in or contact support@sbisecure.in. \nPay verification fee to verify@upi to restore access.\n",
+        "scam_type": "KYC Phishing",
+        "risk_score": 90,
+        "entities": {
+            "phone_numbers": [],
+            "urls": [
+                "https://secure-kyc-update.in"
+            ],
+            "emails": [
+                "support@sbisecure.in"
+            ],
+            "upi_ids": [
+                "support@sbisecure",
+                "verify@upi"
+            ],
+            "banks": [
+                "sbi"
+            ],
+            "keywords": [
+                "urgent",
+                "blocked",
+                "kyc",
+                "account",
+                "verify"
+            ]
+        }
+    },
+    {
+        "timestamp": "2026-02-05T00:52:28.173270",
+        "message": "Urgent! Your HDFC Bank account has been temporarily suspended due to KYC mismatch. \nVerify immediately at https://hdfc-secure-update.in or contact care@hdfc-support.in. \nTo avoid permanent suspension, pay the verification fee to hdfcverify@upi now.\n",
+        "scam_type": "KYC Phishing",
+        "risk_score": 85,
+        "entities": {
+            "phone_numbers": [],
+            "urls": [
+                "https://hdfc-secure-update.in"
+            ],
+            "emails": [
+                "care@hdfc-support.in"
+            ],
+            "upi_ids": [
+                "care@hdfc",
+                "hdfcverify@upi"
+            ],
+            "banks": [
+                "hdfc"
+            ],
+            "keywords": [
+                "urgent",
+                "kyc",
+                "account",
+                "verify"
+            ]
+        }
+    },
+    {
+        "timestamp": "2026-02-05T00:52:38.590631",
+        "message": "Congratulations! You have won a lottery prize. Click now to claim.",
+        "scam_type": "Lottery Scam",
+        "risk_score": 35,
+        "entities": {
+            "phone_numbers": [],
+            "urls": [],
+            "emails": [],
+            "upi_ids": [],
+            "banks": [],
+            "keywords": [
+                "lottery",
+                "prize",
+                "click"
+            ]
+        }
+    }
+]
